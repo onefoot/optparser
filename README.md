@@ -8,7 +8,9 @@ Usage:
 
  See, "optparser_example.cc".
 
-*Result:*
+
+
+*Example:*
 <pre>
 $ ./optpex --help
 Usage: optpex [OPTIONS]
