@@ -6,9 +6,9 @@ This program allows parsing the command line options, and displaying the Help me
 Usage:
 ------
 
-*See: "optparser_example.cc"*
+ See, "optparser_example.cc".
 
-Result:
+*Result:*
 <pre>
 $ ./optpex --help
 Usage: optpex [OPTIONS]
