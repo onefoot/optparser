@@ -8,7 +8,7 @@ Usage:
 
 See: "optparser_example.cc"
 
-
+<pre>
 $ ./optpex --help
 Usage: optpex [OPTIONS]
 
@@ -24,8 +24,12 @@ Help options:
   -?, --help               Show this help message.
       --usage              Show usage message.
 
+</pre>
 
+<pre>
 $ ./optpex --help
 Usage: optpex [-x|--first=INT] [-y|--second=STRING] [-z|--third]
               [-a|--fourth=FLOAT] [-b|--fifth=DOUBLE] [-c|--sixth]
               [-?|--help] [--usage]
+
+</pre>
