@@ -30,7 +30,7 @@ Help options:
 </pre>
 
 <pre>
-$ ./optpex --help
+$ ./optpex --usage
 Usage: optpex [-x|--first=INT] [-y|--second=STRING] [-z|--third]
               [-a|--fourth=FLOAT] [-b|--fifth=DOUBLE] [-c|--sixth]
               [-?|--help] [--usage]
