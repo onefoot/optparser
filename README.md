@@ -1,12 +1,12 @@
 optparser
 =========
 
-This program allows parsing the command line options, and displaying the Help message automatically.
+This program allows parsing the command line options and displaying the Help message automatically.
 
 Usage:
 ------
 
- See, "optparser_example.cc".
+ See "optparser_example.cc".
 
 
 
