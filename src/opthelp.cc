@@ -2,6 +2,8 @@
 
 #include <algorithm>
 #include <limits>
+#include <sys/ioctl.h>
+#include <unistd.h>
 #include "opthelp.hh"
 #include "optexcept.hh"
 
@@ -106,12 +108,12 @@ InfoGroup::get_desc_length(const OptID& oid) const
 // OptDBHelp:
 //   Member functions.
 //
-OptDBHelp::OptDBHelp(size_t col_size): AbstractDecoratorOptDB(create_db()),
-				       help_caption("Usage: "),
-				       width_limit(col_size),
-				       first_col_width(0),
-				       second_col_width(0),
-				       third_col_width(0)
+OptDBHelp::OptDBHelp(): AbstractDecoratorOptDB(create_db()),
+			help_caption("Usage: "),
+			width_limit(get_terminal_size()),
+			first_col_width(0),
+			second_col_width(0),
+			third_col_width(0)
 {
   OptID gid(numeric_limits<unsigned int>::max());
   InfoGroup* grp = 0;
@@ -261,6 +263,20 @@ OptDBHelp::generate_usage()
 // OptDBHelp:
 //   Private member functions.
 // 
+size_t
+OptDBHelp::get_terminal_size()
+{
+  size_t term_width = 80;	// Default.
+  if (::isatty(STDIN_FILENO)) {
+    ::winsize ws;
+    if (::ioctl(STDIN_FILENO, TIOCGWINSZ, &ws) != -1) {
+      term_width = ws.ws_col;
+    }
+  }
+  return term_width;
+}
+
+
 OptID
 OptDBHelp::alloc_grpid()
 {

@@ -26,7 +26,7 @@ using std::endl;
 OptControl::OptControl(): opt_db(0)
 {
   try {
-    opt_db = new OptDBHelp(c_screen_width);
+    opt_db = new OptDBHelp();
   }
   catch (...) {
     throw optparser_error("Memory allocation failed, 'OptDBHelp'.");

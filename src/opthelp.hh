@@ -76,7 +76,7 @@ namespace optparser {
 
   public:
     // constructor & destructor
-    OptDBHelp(size_t col_size);
+    OptDBHelp();
     ~OptDBHelp();
     
     // method
@@ -93,6 +93,7 @@ namespace optparser {
     std::string generate_usage();
 
   private:
+    size_t get_terminal_size();
     OptID alloc_grpid();
     void calc_help_col_width();
     void calc_usage_col_width();

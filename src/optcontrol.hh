@@ -12,11 +12,6 @@
 
 namespace optparser {
 
-  // Constans for OptControl.
-  // 
-  const size_t c_screen_width = 84;
-
-
   // OptControl:
   //   The controller of the options.
   // 
